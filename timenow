@@ -3,7 +3,7 @@
 # A simple time tracking script to log activities from the terminal.
 # This version creates a log file in the current directory.
 
-LOGFILE="$HOME/timelog.md"
+LOGFILE=./timelog.md
 
 # Main logic based on the first argument provided.
 if [[ "$1" == "list" ]]; then
