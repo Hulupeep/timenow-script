@@ -3,8 +3,7 @@
 # A simple time tracking script to log activities from the terminal.
 # This version creates a log file in the current directory.
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
-LOGFILE="$SCRIPT_DIR/timelog.md"
+LOGFILE="$HOME/timelog.md"
 
 # Main logic based on the first argument provided.
 if [[ "$1" == "list" ]]; then
