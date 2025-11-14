@@ -6,7 +6,7 @@
 LOGFILE=./timelog.md
 
 # Main logic based on the first argument provided.
-if [[ "$1" == "list" ]]; then
+if [[ "$1" == "list" || "$1" == "ls" || "$1" == "whatsup" ]]; then
     # List the last 10 entries from the log file in the current directory.
     if [ -f "$LOGFILE" ] && [ -s "$LOGFILE" ]; then
         echo "---"
@@ -18,12 +18,12 @@ if [[ "$1" == "list" ]]; then
     fi
 elif [ -z "$1" ]; then
     # No arguments provided, just log the current timestamp.
-    TIMESTAMP=$(date --iso-8601=seconds)
+    TIMESTAMP=$(date +'%T %y-%m-%d')
     echo "* ${TIMESTAMP}" >> "$LOGFILE"
     echo "Logged to ${LOGFILE}: ${TIMESTAMP}"
 else
     # An argument was provided, log the timestamp with the comment.
-    TIMESTAMP=$(date --iso-8601=seconds)
+    TIMESTAMP=$(date +'%T %y-%m-%d')
     COMMENT="$@"
     echo "* ${TIMESTAMP} - ${COMMENT}" >> "$LOGFILE"
     echo "Logged to ${LOGFILE}: ${TIMESTAMP} - ${COMMENT}"
