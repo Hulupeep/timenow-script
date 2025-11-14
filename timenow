@@ -21,11 +21,11 @@ elif [ -z "$1" ]; then
     # No arguments provided, just log the current timestamp.
     TIMESTAMP=$(date --iso-8601=seconds)
     echo "* ${TIMESTAMP}" >> "$LOGFILE"
-    echo "Logged to ./timelog.md: ${TIMESTAMP}"
+    echo "Logged to ${LOGFILE}: ${TIMESTAMP}"
 else
     # An argument was provided, log the timestamp with the comment.
     TIMESTAMP=$(date --iso-8601=seconds)
     COMMENT="$@"
     echo "* ${TIMESTAMP} - ${COMMENT}" >> "$LOGFILE"
-    echo "Logged to ./timelog.md: ${TIMESTAMP} - ${COMMENT}"
+    echo "Logged to ${LOGFILE}: ${TIMESTAMP} - ${COMMENT}"
 fi
