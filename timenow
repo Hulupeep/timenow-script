@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# A simple time tracking script to log activities from the terminal.
+# This version creates a log file in the current directory.
+
+LOGFILE=./timelog.md
+
+# Main logic based on the first argument provided.
+if [[ "$1" == "list" ]]; then
+    # List the last 10 entries from the log file in the current directory.
+    if [ -f "$LOGFILE" ] && [ -s "$LOGFILE" ]; then
+        echo "---"
+        echo "Showing last 10 entries from $LOGFILE:"
+        echo "---"
+        tail -n 10 "$LOGFILE" | tac
+    else
+        echo "No timelog.md found or it is empty in this directory."
+    fi
+elif [ -z "$1" ]; then
+    # No arguments provided, just log the current timestamp.
+    TIMESTAMP=$(date --iso-8601=seconds)
+    echo "* ${TIMESTAMP}" >> "$LOGFILE"
+    echo "Logged to ./timelog.md: ${TIMESTAMP}"
+else
+    # An argument was provided, log the timestamp with the comment.
+    TIMESTAMP=$(date --iso-8601=seconds)
+    COMMENT="$@"
+    echo "* ${TIMESTAMP} - ${COMMENT}" >> "$LOGFILE"
+    echo "Logged to ./timelog.md: ${TIMESTAMP} - ${COMMENT}"
+fi
