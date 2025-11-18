@@ -10,10 +10,11 @@ In a developer's workflow, context is everything. Jumping from the terminal to a
 
 ## Use Cases
 
-*   **Task Tracking:** Keep a running log of what you've completed in a project.
+*   **Task Tracking:** Keep a running log of what you've completed in a project. Quotes are optional. Don't include more than one set of quotes.
     ```bash
     hey 'Finished setting up the database schema'
     hey 'Fixed the authentication bug #123'
+    hey  Just added expenses to xero for march 
     ```
 *   **Work Journal:** Maintain a daily work log for reporting or personal tracking.
     ```bash
@@ -79,3 +80,9 @@ If you prefer to keep the script within each project:
 1.  Copy the `hey` script to your project directory.
 2.  Make it executable (`chmod +x hey`).
 3.  Run it using `./hey`.
+
+### 1. Make it better
+Maybe youc could extend it by logging where a timelog.md is when it is created ina global file then run reports or a markdown based kanban off it.
+Maybe you could add numbering and then add a command hey 10 done or hey 10 doing or hey 10 WaitingFor to give them simple status
+Maybe add tags
+Maybe nothing. keep it simple
