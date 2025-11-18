@@ -82,7 +82,7 @@ If you prefer to keep the script within each project:
 3.  Run it using `./hey`.
 
 ### 1. Make it better
-Maybe youc could extend it by logging where a timelog.md is when it is created ina global file then run reports or a markdown based kanban off it.
-Maybe you could add numbering and then add a command hey 10 done or hey 10 doing or hey 10 WaitingFor to give them simple status
-Maybe add tags
-Maybe nothing. keep it simple
+a.  Maybe youc could extend it by logging where a timelog.md is when it is created ina global file then run reports or a markdown based kanban off it.
+b.  Maybe you could add numbering and then add a command hey 10 done or hey 10 doing or hey 10 WaitingFor to give them simple status
+c.  Maybe add tags
+d.  Maybe nothing. keep it simple
